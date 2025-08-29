@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Logimit Technology · Traffic Monetization</title>
   <meta name="description" content="Logimit Technology focuses on Traffic Monetization via performance buying on TikTok / Facebook, with strong attribution and compliant scaling." />
   <meta name="keywords" content="Traffic Monetization, performance marketing, TikTok, Facebook, RSOC, AFD, search arbitrage, Logimit" />
@@ -31,26 +31,29 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background: linear-gradient(135deg, #fdf2f8 0%, #faf5ff 35%, #eef2ff 70%, #ffffff 100%);
       color: var(--text);
+      -webkit-font-smoothing: antialiased;
     }
     a{color:inherit; text-decoration:none}
     .container{max-width:1100px; margin:0 auto; padding:0 20px}
-    header{position:sticky; top:0; backdrop-filter: blur(6px); background: rgba(255,255,255,0.65); border-bottom:1px solid #e5e7eb;}    
+    header{position:sticky; top:0; backdrop-filter: blur(6px); background: rgba(255,255,255,0.85); border-bottom:1px solid #e5e7eb; z-index:50;}    
     .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .nav a{padding:10px 8px; display:inline-block; -webkit-tap-highlight-color: transparent}
+    .nav a:active{opacity:.8}
     .logo{display:flex; gap:10px; align-items:center}
     .logo img{height:34px; width:auto; display:block}
 
     .hero{display:grid; gap:26px; grid-template-columns: 1.3fr 1fr; padding:80px 0 40px; align-items:center}
-    .hero h1{font-size: clamp(28px, 4vw, 48px); line-height:1.12; margin:0}
-    .hero p{font-size: clamp(14px, 2.2vw, 18px); color: var(--muted); margin:12px 0 0}
+    .hero h1{font-size: clamp(26px, 5vw, 42px); line-height:1.2; margin:0}
+    .hero p{font-size: clamp(14px, 4vw, 18px); color: var(--muted); margin:12px 0 0}
     .hero .panel{backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); background: var(--panel); border: 1px solid rgba(229,231,235,0.4); border-radius: var(--radius); padding:22px; box-shadow: var(--shadow)}
-    .hero .stats{display:grid; grid-template-columns: repeat(3,1fr); gap:14px; margin-top:18px}
-    .stat{backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); background: var(--panel); border-radius: 16px; padding:16px; border:1px solid rgba(229,231,235,0.4); box-shadow: var(--shadow)}
-    .stat .n{font-weight:800; font-size:22px}
+    .hero .stats{display:grid; grid-template-columns: repeat(auto-fit,minmax(90px,1fr)); gap:14px; margin-top:18px}
+    .stat{backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); background: var(--panel); border-radius: 16px; padding:14px; border:1px solid rgba(229,231,235,0.4); box-shadow: var(--shadow); text-align:center}
+    .stat .n{font-weight:800; font-size:20px}
     .stat .k{font-size:12px; color: var(--muted)}
 
     .section{padding:60px 0}
-    .h2{font-size: clamp(22px, 3vw, 32px); font-weight:800; margin:0 0 18px}
-    .lead{color:var(--muted); margin:0 0 22px}
+    .h2{font-size: clamp(20px, 4vw, 28px); font-weight:800; margin:0 0 18px}
+    .lead{color:var(--muted); margin:0 0 22px; font-size:clamp(14px,3.5vw,17px)}
     .grid{display:grid; gap:16px; grid-template-columns: repeat(3, 1fr)}
     .card{backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); background: var(--panel); padding:20px; border-radius:16px; border:1px solid rgba(229,231,235,0.4); box-shadow: var(--shadow)}
     .card h3{margin:0 0 10px; font-size:18px}
@@ -58,7 +61,7 @@
 
     /* partner logos */
     .partners{margin-top:16px}
-    .partners-logos{display:flex; gap:24px; flex-wrap:wrap; align-items:center}
+    .partners-logos{display:flex; gap:24px; flex-wrap:wrap; align-items:center; justify-content:flex-start}
     .partners-logos img{height:40px; width:auto; display:block; object-fit:contain}
 
     .two{display:grid; grid-template-columns: 1fr 1fr; gap:18px; margin-top:40px}
@@ -66,16 +69,41 @@
     .contact{display:grid; gap:12px}
     .input{backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); background: var(--panel); border:1px solid #d1d5db; border-radius:12px; padding:12px 14px; color:var(--text); outline:none}
     .input:focus{box-shadow: var(--ring); border-color: var(--brand)}
-    .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 18px; border-radius:12px; background:linear-gradient(135deg, var(--brand), #ec4899); color:white; font-weight:800; border:none; cursor:pointer; box-shadow: var(--shadow)}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 18px; border-radius:12px; background:linear-gradient(135deg, var(--brand), #ec4899); color:white; font-weight:800; border:none; cursor:pointer; box-shadow: var(--shadow); font-size:clamp(14px,4vw,16px)}
 
-    footer{border-top:1px solid #e5e7eb; padding:28px 0 50px; color:var(--muted)}
+    footer{border-top:1px solid #e5e7eb; padding:28px 0 50px; color:var(--muted); font-size:clamp(12px,3.5vw,14px)}
 
+    /* Mobile optimizations */
     @media (max-width: 880px){
-      .container{padding:0 28px} /* 增加左右边距 */
-      .hero{grid-template-columns: 1fr; padding-top:48px}
+      .container{padding:0 16px}
+      header{backdrop-filter: blur(4px); background: rgba(255,255,255,0.85)}
+      .nav{height:56px}
+      .logo img{height:28px}
+      .hero{grid-template-columns: 1fr; padding-top:56px}
+      .hero h1{font-size: clamp(22px, 6vw, 34px)}
+      .hero p{font-size: 15px}
+      .hero .stats{grid-template-columns: repeat(2,1fr);}
+      .panel,.card,.stat,.input{backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); background: rgba(255,255,255,0.28)}
       .grid{grid-template-columns: 1fr;}
       .two{grid-template-columns: 1fr; margin-top:20px}
+      .partners-logos{gap:16px; justify-content:center}
       .partners-logos img{height:32px}
+      .btn{width:100%}
+    }
+    @media (max-width: 480px){
+      .container{padding:0 12px}
+      .hero h1{font-size: clamp(20px, 8vw, 28px)}
+      .hero .stats{grid-template-columns: 1fr}
+      .partners-logos{gap:12px}
+      .partners-logos img{height:28px}
+      .nav{gap:8px}
+    }
+      .grid{grid-template-columns: 1fr;}
+      .two{grid-template-columns: 1fr; margin-top:20px}
+      .partners-logos{justify-content:center}
+      .partners-logos img{height:28px}
+      .logo img{height:28px}
+      .nav{flex-direction:column; align-items:flex-start; gap:8px; height:auto; padding:8px 0}
     }
   </style>
 </head>
@@ -86,7 +114,7 @@
         <img src="logo.png" alt="Logimit Logo" />
         <strong>Logimit Technology</strong>
       </div>
-      <nav style="display:flex; gap:16px">
+      <nav style="display:flex; gap:16px; flex-wrap:wrap">
         <a href="#about">About</a>
         <a href="#contact-en">Contact</a>
       </nav>
@@ -149,7 +177,7 @@
     <div class="container">
       <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
         <div>© <span id="year"></span> Logimit Technology Co., Ltd. All rights reserved.</div>
-        <div style="display:flex; gap:16px">
+        <div style="display:flex; gap:16px; flex-wrap:wrap">
           <a href="#about">About</a>
           <a href="#contact-en">Contact</a>
           <a href="mailto:contact@logimit.com">Email</a>
